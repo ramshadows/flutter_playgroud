@@ -1,0 +1,72 @@
+Getting to know GridView
+GridView is a 2D array of scrollable widgets. It arranges the children in a grid and
+supports horizontal and vertical scrolling.
+
+Getting used to GridView is easy. Like ListView , it inherits from ScrollView , so
+their constructors are very similar.
+GridView has five types of constructors:
+• The default takes an explicit list of widgets.
+• GridView.builder()
+• GridView.count()
+• GridView.custom()
+• GridView.extent()
+The builder() and count() constructors are the most common. You’ll have no
+problem getting used to these since ListView uses similar ones.
+
+Key parameters
+Here are some parameters you should pay attention to:
+• crossAxisSpacing: The spacing between each child in the cross axis.
+• mainAxisSpacing: The spacing between each child on the main axis.
+• crossAxisCount: The number of children in the cross axis. You can also think of
+this as the number of columns you want in a grid.
+• shrinkWrap. Controls the fixed scroll area size.
+• physics: Controls how the scroll view responds to user input.
+• primary: Helps Flutter determine which scroll view is the primary one.
+• scrollDirection: Controls the axis along which the view will scroll.
+
+
+Understanding the cross and main axis?
+What’s the difference between the main and cross axis? Remember that Column s
+and Row s are like ListView s, but without a scroll view.
+The main axis always corresponds to the scroll direction!
+If your scroll direction is horizontal, you can think of this as a Row . The main axis
+represents the horizontal direction
+
+If your scroll direction is vertical, you can think of it as a Column . The main axis
+represents the vertical directionIf your scroll direction is vertical, you can think of it as a Column . 
+
+
+Grid delegates
+Grid delegates help figure out the spacing and the number of columns to use to lay
+out the children in a GridView .
+Aside from customizing your own grid delegates, Flutter provides two delegates you
+can use out of the box:
+• SliverGridDelegateWithFixedCrossAxisCount
+• SliverGridDelegateWithMaxCrossAxisExtent
+The first creates a layout that has a fixed number of tiles along the cross axis. The
+second creates a layout with tiles that have a maximum cross axis extent.
+
+
+****  Understanding chips ****
+There are four different types of chip widgets:
+
+1. InputChip: Converts input into chips. An example would be user preference UI
+flows, such as asking the types of new media they like.
+2. ChoiceChip: Allows the user to make a single selection given a set of options.
+3. FilterChip: Allows the user to select multiple answers given a set of options.
+4. ActionChip: A button that’s styled like a chip.
+
+********   KEY POINTS ******
+You can pass data around with callbacks or provider packages.
+• If you need to pass data one level up, use callbacks.
+• If you need to pass data deep in the widget tree, use providers.
+• Provider is a state management helper that acts as a wrapper around inherited
+widgets.
+• Provider helps expose state model objects to widgets below it.
+• Consumer listens for changes to values and rebuilds the widgets below itself.
+• Split your widgets by screen to keep code modular and organized.
+• Create manager objects to manage functions and state changes in one place.
+• Gesture widgets recognize and determine the type of touch event. They provide
+callbacks to react to events like onTap or onDrag .
+• You can use dismissible widgets to swipe away items in a list.
+

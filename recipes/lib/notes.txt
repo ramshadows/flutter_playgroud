@@ -1,0 +1,5 @@
+Basic Widgets
+-Three categories of basic widgets, which you can use
+1. Structure and navigation
+2. Displaying information
+3. Positioning widgets

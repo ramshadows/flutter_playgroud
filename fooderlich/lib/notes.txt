@@ -1,0 +1,89 @@
+Basic Widgets
+-Three categories of basic widgets, which you can use
+1. Structure and navigation
+2. Displaying information
+3. Positioning widgets
+
+App structure and navigation
+
+--Theme.of(context) returns the
+nearest Theme in the widget tree. If the widget has a defined Theme , it returns
+that. Otherwise, it returns the app’s theme.
+
+Display widgets handle what the user sees onscreen. Examples of display widgets
+include:
+• Text
+• Image
+• Button
+Layout widgets help with the arrangement of widgets. Examples of layout widgets
+include:
+• Container
+• Padding
+• Stack
+• Column
+• SizedBox
+• Row
+
+
+• Container: Groups all the other widgets together. It applies Padding and uses a
+BoxDecoration to describe how to apply shadows and rounded corners.
+• Stack: Layers widgets on top of each other.
+• Text: Displays the recipe content, like title, subtitle and author.
+• Image: Shows the recipe’s art.
+
+BoxDecoration . This describes how to draw a box.
+Positioned widget controls where you position the Text in the Stack .
+
+A snackbar is useful to briefly display information to users when an
+action has taken place. For example, when you delete an email, you can
+provide a user with an action to undo. In this case, the snackbar will tell the
+user that they have liked a recipe.
+
+With Expanded , you fill in the remaining available space.
+
+RotatedBox widget, rotates the text clockwise by the specified
+quarterTurns . This makes it appear vertical.
+
+Wrap is a layout widget that attempts to lay out each of its children adjacent to
+the previous children. If there’s not enough space, it wraps to the next line
+By default, the wrap layout is horizontal and both the children and the runs are aligned to the start.
+The [textDirection] argument defaults to the ambient [Directionality], if any. 
+If there is no ambient directionality, and a text direction is going to be necessary 
+to decide which direction to lay the children in or to disambiguate start or end 
+values for the main or cross axis directions, the [textDirection] must not be null.
+
+
+A Chip widget is a display element that displays text and image avatars,
+and also performs user actions such as tap and delete. For more about chip
+widgets, check out this awesome tutorial by Pinkesh Darji:
+https://medium.com/aubergine-solutions/1c46217dca9b
+
+
+Types of widgets
+There are three major types of widgets: Stateless, Stateful and Inherited.
+
+Stateless widgets
+You can’t alter the state or properties of Stateless widget once it’s built.
+
+The lifecycle of a stateless widget starts with a constructor, which you can pass
+parameters to, and a build() method, which you override. The visual description of
+the widget is determined by the build() method.
+The following events trigger this kind of widget to update:
+1. The widget is inserted into the widget tree for the first time.
+2. The state of a dependency or inherited widget — ancestor nodes — changes.
+
+Stateful widgets
+Stateful widgets preserve state, which is useful when parts of your UI need to change
+dynamically.
+Stateful widgets store their mutable state in a separate State class. That’s why every
+stateful widget must override and implement createState() .
+
+State object lifecycle
+Every widget’s build() method takes a BuildContext as an argument. The build
+context tells you where you are in the tree of widgets. You can access the element
+for any widget through the BuildContext .
+
+
+Inherited widgets
+Inherited widgets let you access state information from the parent elements in the
+tree hierarchy.
